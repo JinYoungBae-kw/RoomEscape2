@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="stylesheet" href="all.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>광운 방탈출</title>
+</head>
+
+<body>
+  <div class="text-container" style="margin-top: 30%;">
+    <h4>
+      엇! 자전거 대여장 앞에 <span class="red-text">연촌의 지도</span>가 있다.
+    </h4>
+    <img src="image/map.png" class="img_responsive">
+    <h4>
+      연촌에 대해서 자세히 나와있는데<br>
+      여기 <span class="red-text">빈칸</span>은 무엇이지..<br><br>
+      빈칸을 넣어 지도를 완성시켜야<br>
+      한눈에 보기 쉬울 것 같다.
+    </h4>
+  </div>
+
+  <button id="prev-button" class="text-center">이전</button>
+  <button id="next-button" class="text-center">다음</button>
+
+  <script>
+    // 다음 버튼
+    document.getElementById("next-button").addEventListener("click", function() {
+      window.location.href = "index13.html";
+    });
+
+    // 이전 버튼
+    document.getElementById("prev-button").addEventListener("click", function() {
+      window.location.href = "index11.html";
+    });
+  </script>
+</body>
+</html>
