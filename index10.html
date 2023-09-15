@@ -8,20 +8,29 @@
 </head>
 
 <body>
-  <div class="text-container" style="margin-top: 65%;">
+  <div class="text-container" style="margin-top: 50%;">
     <h3>
       <span class="red-text" style="font-size: 100%;">Q. 간판으로 유추해낼 수 있는<br>
-      광운대학교 OO관은 무엇일까?</span>
+      광운대학교 OO관은 무엇일까?<br><br>
+      ['OO관' 모두 적으시오]</span>
       <input type="text" id= "text-input" class="input-box">
       <button id="answer-button" class="text-center">입력</button>
     </h3>
+  </div>
+
+  <div id="hint-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button" id="close-hint-popup">&times;</span>
+      힌트 페이지<br>
+      힌트 페이지 입니다.
+    </div>
   </div>
 
   <script>
     // 다음 버튼
     document.getElementById("answer-button").addEventListener("click", function() {
       var userInput = document.getElementById("text-input").value.toLowerCase();
-      if (userInput === "복지") {
+      if (userInput === "복지관") {
         //정답 입력 시
         window.location.href = "index11.html";
       } else {
@@ -30,9 +39,16 @@
       }
     });
 
-    // 이전 버튼
-    document.getElementById("prev-button").addEventListener("click", function() {
-      window.location.href = "index9.html";
+    // hint-button 클릭 시 팝업 열기
+    document.getElementById("hint-button").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "block";
+    });
+
+    // close-hint-popup 버튼 클릭 시 팝업 닫기
+    document.getElementById("close-hint-popup").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "none";
     });
   </script>
 </body>

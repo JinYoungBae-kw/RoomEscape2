@@ -8,22 +8,30 @@
 </head>
 
 <body>
-  <div class="text-container" style="margin-top: 65%;">
-    <h3>
+  <div class="text-container" style="margin-top: 60%;">
+    <h2>
       <span class="red-text" style="font-size: 100%;">
-        Q. 문자를 해석해보자.<br>
-        (복지관 OOO호 모두 입력하시오.)
+        Q. 의료시설의 위치는?<br>
+        [OOO OOO]
         <input type="text" id= "text-input" class="input-box">
         <button id="answer-button" class="text-center">입력</button>
       </span>     
-    </h3>
+    </h2>
+  </div>
+
+  <div id="hint-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button" id="close-hint-popup">&times;</span>
+      힌트 페이지<br>
+      힌트 페이지 입니다.
+    </div>
   </div>
 
   <script>
     // 다음 버튼
     document.getElementById("answer-button").addEventListener("click", function() {
       var userInput = document.getElementById("text-input").value.toLowerCase();
-      if (userInput === "복지관 203호") {
+      if (userInput === "복지관 203") {
         //정답 입력 시
         window.location.href = "index18.html";
       } else {
@@ -32,9 +40,16 @@
       }
     });
 
-    // 이전 버튼
-    document.getElementById("prev-button").addEventListener("click", function() {
-      window.location.href = "index16.html";
+    // hint-button 클릭 시 팝업 열기
+    document.getElementById("hint-button").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "block";
+    });
+
+    // close-hint-popup 버튼 클릭 시 팝업 닫기
+    document.getElementById("close-hint-popup").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "none";
     });
   </script>
 </body>
