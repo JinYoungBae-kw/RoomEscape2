@@ -21,10 +21,12 @@
   }
 
   body {
+    overflow-y: auto; /* 스크롤바 숨기기 */
     position: relative;
     background-image: url('image/backscreen.jpg');
     background-size: 100% 100%; /* 원본 이미지를 화면에 맞게 확장 */
     background-repeat: no-repeat; /* 이미지 반복 없애기 */
+    background-attachment: fixed; /* 스크롤 시 배경 이미지 고정 */
   }
 
   .letter-body {
