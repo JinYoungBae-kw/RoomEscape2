@@ -191,7 +191,7 @@
   width: 300px; /* 원하는 너비로 설정하세요 */
   height: 100px; /* 원하는 높이로 설정하세요 */
   position: fixed;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
