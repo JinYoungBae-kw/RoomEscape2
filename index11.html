@@ -14,7 +14,7 @@
         Q. 경비 아저씨의 이전 순찰 시간대를 통해서<br>
         다음 순찰 시간대를 유추해보자<br><br>
         <img src="image/clock.png" class="img_responsive" style="width: 50%; height: 50%;">
-        <span style="font-size: 90%;"><br>[ 답: O시 ]<br></span>
+        <span style="font-size: 90%;"><br>[ 답: O:OO ]<br></span>
       </span>
       <input type="text" id= "text-input" class="input-box">
       <button id="hint-button" class="text-center">?</button>
@@ -58,7 +58,7 @@
     // 다음 버튼
     document.getElementById("answer-button").addEventListener("click", function() {
       var userInput = document.getElementById("text-input").value.toLowerCase();
-      if (userInput === "2시" || userInput === "2") {
+      if (userInput === "9:20") {
         //정답 입력 시
         window.location.href = "index12.html";
       } else {

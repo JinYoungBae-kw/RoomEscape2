@@ -11,9 +11,10 @@
   <div class="text-container" style="margin-top: 35%;">
     <h3>
       <span class="red-text">
-        Q. 문서 관련 공간은 어디있는 것인가?<br><br>
-        <img src="image/hwado.png" class="img_responsive">
-        <span style="font-size: 70%"><br>[ 답: OOOO ]<br></span>
+        Q. 실제 화도관 1층의 무인증명서<br>
+        발급기와 다른 점은 무엇인가?<br><br>
+        <img src="image/mooin.png" class="img_responsive">
+        <span style="font-size: 70%"><br>[ 답: O-OOOOO ]<br></span>
       </span>
       <input type="text" id= "text-input" class="input-box">
       <button id="hint-button" class="text-center">?</button>
@@ -27,8 +28,8 @@
     <div class="popup-content">
       <span class="close-button" id="close-hint-popup">&times;</span>
       <h3 style="margin-top: 7%;">
-        화도관 건물 배치도를 보면 지하<br>
-        1층에 문서와 관련된 공간이 있다.
+        24시간 증명발급서비스 문구의<br>
+        아래를 자세히 살펴보자.
       </h3>
     </div>
   </div>
@@ -56,7 +57,7 @@
     // 다음 버튼
     document.getElementById("answer-button").addEventListener("click", function() {
       var userInput = document.getElementById("text-input").value.toLowerCase();
-      if (userInput === "B111" || userInput === "b111") {
+      if (userInput === "u-kiosk") {
         //정답 입력 시
         window.location.href = "index25.html";
       } else {
