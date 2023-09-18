@@ -9,32 +9,81 @@
 
 <body>
   <div class="text-container" style="margin-top: 25%;">
-    <h3>
-      연촌이 <span class="red-text">복지관</span>이구나<br>
-      그곳으로 이동해보자.
-    </h3>
-    <img src="image/bokji.png" class="img_responsive">
-    <h3>
-      이곳에서는...<br>
-      각자 자기만의 <span class="red-text">뜻</span>을 말하며<br>
-      <span style="font-size: 95%">
-        <span class="red-text">시끌벅적한 분위기</span>가 연출되고 있다.
+    <h4>
+      <span class="red-text">
+        Q. 경비 아저씨의 이전 순찰 시간대를 통해서<br>
+        다음 순찰 시간대를 유추해보자<br><br>
+        <img src="image/clock.png" class="img_responsive" style="width: 50%; height: 50%;">
+        <span style="font-size: 90%;"><br>[ 답: O시 ]<br></span>
       </span>
-    </h3>
+      <input type="text" id= "text-input" class="input-box">
+      <button id="hint-button" class="text-center">?</button>
+      <button id="answer-button" class="text-center">입력</button>
+    </h4>
   </div>
 
-  <button id="prev-button" class="text-center">이전</button>
-  <button id="next-button" class="text-center">다음</button>
+  <button id="prev-button" class="text-center" style="left: 50%; transform: translateX(-50%);">이전</button>
+
+  <div id="hint-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button" id="close-hint-popup">&times;</span>
+      <h3 style="margin-top: 3%;">
+        시침과 분침이 규칙적으로 움직이는<br>
+        것 같다. 규칙을 유추해내면<br>
+        금방 풀 수 있을 것 같다.
+      </h3>
+    </div>
+  </div>
+
+  <div id="wrong-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button" id="close-wrong-popup">&times;</span>
+      <h3 style="margin-top: 7%;">
+        <span class="red-text" style="font-size: 100%;">
+          오답입니다!<br>
+          <span style="font-size: 90%;">
+            (왼쪽 위 "?" 버튼을 눌러보세요!)
+          </span>
+        </span>
+      </h3>
+    </div>
+  </div>
 
   <script>
-    // 다음 버튼
-    document.getElementById("next-button").addEventListener("click", function() {
-      window.location.href = "index12.html";
-    });
-
     // 이전 버튼
     document.getElementById("prev-button").addEventListener("click", function() {
       window.location.href = "index10.html";
+    });
+
+    // 다음 버튼
+    document.getElementById("answer-button").addEventListener("click", function() {
+      var userInput = document.getElementById("text-input").value.toLowerCase();
+      if (userInput === "2시" || userInput === "2") {
+        //정답 입력 시
+        window.location.href = "index12.html";
+      } else {
+        // 오답 입력 시
+        var wrogPopup = document.getElementById("wrong-popup");
+        wrogPopup.style.display = "block";
+      }
+    });
+
+    // hint-button 클릭 시 팝업 열기
+    document.getElementById("hint-button").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "block";
+    });
+
+    // close-hint-popup 버튼 클릭 시 팝업 닫기
+    document.getElementById("close-hint-popup").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "none";
+    });
+
+    // close-wrong-popup 버튼 클릭 시 팝업 닫기
+    document.getElementById("close-wrong-popup").addEventListener("click", function() {
+      var wrongPopup = document.getElementById("wrong-popup");
+      wrongPopup.style.display = "none";
     });
   </script>
 </body>

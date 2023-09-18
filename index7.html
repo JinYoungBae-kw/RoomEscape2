@@ -8,32 +8,79 @@
 </head>
 
 <body>
-  <div class="text-container" style="margin-top: 10%;">
-    <h4 style="margin-bottom: 0%;">
-      나는 그곳에서<br>
-      <span class="red-text">비마</span>를 볼 수 있었다.
-    </h4>
-    <img src="image/horse.png" class="img_responsive" style="width: 70%; height: 70%;">
-    <h4>
-      <span class="red-text">그 순간!</span><br><br>
-      "연촌에서 모두의 뜻이 하나로 모일 때,<br>
-      <span class="red-text">진정한 진리</span>를 얻을 것이다."<br><br>
-      비마가 말하였다.
-    </h4>
+  <div class="text-container" style="margin-top: 60%;">
+    <h3>
+      <span class="red-text">
+        Q. 어느 건물의 CCTV를 확인해야할까?<br>
+        <span style="font-size: 70%;"><br>[ 답: OOO ]<br></span>
+      </span>
+      <input type="text" id= "text-input" class="input-box">
+      <button id="hint-button" class="text-center">?</button>
+      <button id="answer-button" class="text-center">입력</button>
+    </h3>
   </div>
 
-  <button id="prev-button" class="text-center">이전</button>
-  <button id="next-button" class="text-center">다음</button>
+  <button id="prev-button" class="text-center" style="left: 50%; transform: translateX(-50%);">이전</button>
+
+  <div id="hint-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button" id="close-hint-popup">&times;</span>
+      <h3 style="margin-top: 7%;">
+        분명 참빛관 바로 옆 건물에서<br>
+        보일 것 같다.
+      </h3>
+    </div>
+  </div>
+
+  <div id="wrong-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button" id="close-wrong-popup">&times;</span>
+      <h3 style="margin-top: 7%;">
+        <span class="red-text" style="font-size: 100%;">
+          오답입니다!<br>
+          <span style="font-size: 90%;">
+            (왼쪽 위 "?" 버튼을 눌러보세요!)
+          </span>
+        </span>
+      </h3>
+    </div>
+  </div>
 
   <script>
-    // 다음 버튼
-    document.getElementById("next-button").addEventListener("click", function() {
-      window.location.href = "index8.html";
-    });
-
     // 이전 버튼
     document.getElementById("prev-button").addEventListener("click", function() {
       window.location.href = "index6.html";
+    });
+
+    // 다음 버튼
+    document.getElementById("answer-button").addEventListener("click", function() {
+      var userInput = document.getElementById("text-input").value.toLowerCase();
+      if (userInput === "새빛관") {
+        //정답 입력 시
+        window.location.href = "index8.html";
+      } else {
+        // 오답 입력 시
+        var wrogPopup = document.getElementById("wrong-popup");
+        wrogPopup.style.display = "block";
+      }
+    });
+
+    // hint-button 클릭 시 팝업 열기
+    document.getElementById("hint-button").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "block";
+    });
+
+    // close-hint-popup 버튼 클릭 시 팝업 닫기
+    document.getElementById("close-hint-popup").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "none";
+    });
+
+    // close-wrong-popup 버튼 클릭 시 팝업 닫기
+    document.getElementById("close-wrong-popup").addEventListener("click", function() {
+      var wrongPopup = document.getElementById("wrong-popup");
+      wrongPopup.style.display = "none";
     });
   </script>
 </body>

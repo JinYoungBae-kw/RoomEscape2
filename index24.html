@@ -8,17 +8,13 @@
 </head>
 
 <body>
-  <div class="text-container" style="margin-top: 22%;">
-    <h3 style="margin-bottom: 0%;">
-      <span class="red-text" style="font-size: 100%;">
-        Q. 비석을 보고, 도형이 있는 각 위치의<br>
-        자음/모음을 조합하여 단어를 만들어<br>
-        순서대로 적어보자.<br>
-        <span style="font-size: 70%">[다른 사람의 ( )에 ( )기울여라<br>
-        그 속에 ( )의 씨앗이 있을 것이다.]<br><br></span>
-        <span style="font-size: 70%">[ 답: O O OO ]<br></span>
+  <div class="text-container" style="margin-top: 35%;">
+    <h3>
+      <span class="red-text">
+        Q. 문서 관련 공간은 어디있는 것인가?<br><br>
+        <img src="image/hwado.png" class="img_responsive">
+        <span style="font-size: 70%"><br>[ 답: OOOO ]<br></span>
       </span>
-      <img src="image/bisuk-q.png" class="img_responsive">
       <input type="text" id= "text-input" class="input-box">
       <button id="hint-button" class="text-center">?</button>
       <button id="answer-button" class="text-center">입력</button>
@@ -30,12 +26,10 @@
   <div id="hint-popup" class="popup">
     <div class="popup-content">
       <span class="close-button" id="close-hint-popup">&times;</span>
-      <h4 style="margin-top: 2%;">
-        "항상"의 초성/중성/종성 색깔에 따라<br>
-        순서대로 각각에 맞는 자음, 모음을 찾아서<br>
-        단어를 만들면 될 것 같다.<br>
-        [총학 비대위 공식계정 인스타툰 참고.]
-      </h4>
+      <h3 style="margin-top: 7%;">
+        화도관 건물 배치도를 보면 지하<br>
+        1층에 문서와 관련된 공간이 있다.
+      </h3>
     </div>
   </div>
 
@@ -62,7 +56,7 @@
     // 다음 버튼
     document.getElementById("answer-button").addEventListener("click", function() {
       var userInput = document.getElementById("text-input").value.toLowerCase();
-      if (userInput === "말 귀 행운" || userInput === "말귀행운") {
+      if (userInput === "B111" || userInput === "b111") {
         //정답 입력 시
         window.location.href = "index25.html";
       } else {

@@ -9,30 +9,80 @@
 
 <body>
   <div class="text-container" style="margin-top: 25%;">
-    <h4>
-      분명 지도에 <span class="red-text">의료 시설</span>이 있었던 것 같다.<br>
-      한 번 제대로 확인해볼까?
-    </h4>
-    <img src="image/map3.png" class="img_responsive">
-    <img src="image/rmt.png" class="img_responsive" style="margin-top: 10%">
     <h3>
-      글씨가 잘못 써져있는 것 같다.<br>
-      내가 해석해서 위치를 알려줘야겠다.
+      <span class="red-text">
+        Q. 실제 벽화를 확인해보고,<br>
+        등장하는 인물의 인원 수를 적어보자<br><br>
+        <img src="image/wallprint1.png" class="img_responsive">
+        <span style="font-size: 70%;"><br><br>[ 답: O명 ]<br></span>
+      </span>
+      <input type="text" id= "text-input" class="input-box">
+      <button id="hint-button" class="text-center">?</button>
+      <button id="answer-button" class="text-center">입력</button>
     </h3>
   </div>
 
-  <button id="prev-button" class="text-center">이전</button>
-  <button id="next-button" class="text-center">다음</button>
+  <button id="prev-button" class="text-center" style="left: 50%; transform: translateX(-50%);">이전</button>
+
+  <div id="hint-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button" id="close-hint-popup">&times;</span>
+      <h3 style="margin-top: 7%;">
+         벽화는 풋살장 맞은 편 비마관<br>
+         입구 옆에 위치해있다.
+      </h3>
+    </div>
+  </div>
+
+  <div id="wrong-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-button" id="close-wrong-popup">&times;</span>
+      <h3 style="margin-top: 7%;">
+        <span class="red-text" style="font-size: 100%;">
+          오답입니다!<br>
+          <span style="font-size: 90%;">
+            (왼쪽 위 "?" 버튼을 눌러보세요!)
+          </span>
+        </span>
+      </h3>
+    </div>
+  </div>
 
   <script>
-    // 다음 버튼
-    document.getElementById("next-button").addEventListener("click", function() {
-      window.location.href = "index17.html";
-    });
-
     // 이전 버튼
     document.getElementById("prev-button").addEventListener("click", function() {
       window.location.href = "index15.html";
+    });
+
+    // 다음 버튼
+    document.getElementById("answer-button").addEventListener("click", function() {
+      var userInput = document.getElementById("text-input").value.toLowerCase();
+      if (userInput === "9명" || userInput === "9") {
+        //정답 입력 시
+        window.location.href = "index17.html";
+      } else {
+        // 오답 입력 시
+        var wrogPopup = document.getElementById("wrong-popup");
+        wrogPopup.style.display = "block";
+      }
+    });
+
+    // hint-button 클릭 시 팝업 열기
+    document.getElementById("hint-button").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "block";
+    });
+
+    // close-hint-popup 버튼 클릭 시 팝업 닫기
+    document.getElementById("close-hint-popup").addEventListener("click", function() {
+      var hintPopup = document.getElementById("hint-popup");
+      hintPopup.style.display = "none";
+    });
+
+    // close-wrong-popup 버튼 클릭 시 팝업 닫기
+    document.getElementById("close-wrong-popup").addEventListener("click", function() {
+      var wrongPopup = document.getElementById("wrong-popup");
+      wrongPopup.style.display = "none";
     });
   </script>
 </body>

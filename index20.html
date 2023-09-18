@@ -8,12 +8,13 @@
 </head>
 
 <body>
-  <div class="text-container" style="margin-top: 60%;">
+  <div class="text-container" style="margin-top: 30%;">
     <h3>
       <span class="red-text" style="font-size: 100%;">
-        Q. 단서를 해석하면 비마의<br>
-        행방을 유추할 수 있을 것 같다.<br><br>
-        <span style="font-size: 70%;">[ 답: OOO ]<br></span>
+        Q. 제일 비싼 음료수 금액은 무엇인가?<br><br>
+        <img src="image/vendingmachine.png" class="img_responsive" style="width: 70%; height: 70%;">
+        <span style="font-size: 70%;"><br>위치: 화도관 자판기<br><br></span>
+        <span style="font-size: 70%;">[ 답: OOOO원 ]<br></span>
       </span>
       <input type="text" id= "text-input" class="input-box">
       <button id="hint-button" class="text-center">?</button>
@@ -26,10 +27,9 @@
   <div id="hint-popup" class="popup">
     <div class="popup-content">
       <span class="close-button" id="close-hint-popup">&times;</span>
-      <h3 style="margin-top: 3%;">
-        바둑판 9개의 모양 문제에<br>
-        "ㄷㄱㅁ" 형상이 포함된 글자를<br>
-        찾아 순서대로 적어보면 될 것 같다.
+      <h3 style="margin-top: 7%;">
+        화도관 1층 엘리베이터 앞 자판기를<br>
+        보면 바로 알 수 있을 것 같다.
       </h3>
     </div>
   </div>
@@ -57,7 +57,7 @@
     // 다음 버튼
     document.getElementById("answer-button").addEventListener("click", function() {
       var userInput = document.getElementById("text-input").value.toLowerCase();
-      if (userInput === "비마관") {
+      if (userInput === "2300원" || userInput === "2300") {
         //정답 입력 시
         window.location.href = "index21.html";
       } else {
