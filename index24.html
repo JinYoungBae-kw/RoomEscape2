@@ -14,7 +14,7 @@
         Q. 실제 화도관 1층의 무인증명서<br>
         발급기와 다른 점은 무엇인가?<br><br>
         <img src="image/mooin.png" class="img_responsive" style="width: 60%; height: 60%;">
-        <span style="font-size: 70%"><br>[ 답: O-OOOOO ]<br></span>
+        <span style="font-size: 70%"><br>[ 답: U-OOOOO ]<br></span>
       </span>
       <input type="text" id= "text-input" class="input-box">
       <button id="hint-button" class="text-center">?</button>
@@ -37,11 +37,11 @@
   <div id="wrong-popup" class="popup">
     <div class="popup-content">
       <span class="close-button" id="close-wrong-popup">&times;</span>
-      <h3 style="margin-top: 7%;">
-        <span class="red-text" style="font-size: 100%;">
+      <h3 style="margin-top: 6%;">
+        <span class="red-text" style="font-size: 120%;">
           오답입니다!<br>
-          <span style="font-size: 90%;">
-            (왼쪽 위 "?" 버튼을 눌러보세요!)
+          <span style="font-size: 70%;">
+            힌트: 왼쪽 위 [?] 버튼을 눌러보세요!
           </span>
         </span>
       </h3>
@@ -57,7 +57,7 @@
     // 다음 버튼
     document.getElementById("answer-button").addEventListener("click", function() {
       var userInput = document.getElementById("text-input").value.toLowerCase();
-      if (userInput === "u-kiosk") {
+      if (userInput === "u-kiosk" || userInput === "kiosk") {
         //정답 입력 시
         window.location.href = "index25.html";
       } else {
